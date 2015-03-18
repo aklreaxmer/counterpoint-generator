@@ -14,6 +14,7 @@ public class Melody extends Sequence
 			
 			super(Sequence.PPQ, species);
 			this.generation = generation;
+			
 			random = new Random();
 			track = this.createTrack();
 			for(int i = 0; i < length; i++)
@@ -38,9 +39,10 @@ public class Melody extends Sequence
 			//add it to the data
 			data[1] = b[0];
 			
-			return new MidiEvent(new MidiMessage(data), 1*i);
-		return null;
+			return new MidiEvent(new Message(data), 1*i);
+		
 		}
+		return null;
 	
 	}
 }
